@@ -1,4 +1,4 @@
-name ：Deploy Cloudformation S3
+name: Deploy Cloudformation stacks
 
 on:
   workflow_dispatch:
