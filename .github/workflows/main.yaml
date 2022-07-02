@@ -1,19 +1,19 @@
 name: Deploy Cloudformation stacks
 
 on:
-  workflow_dispatch:
-          inputs:
-            region:
-              description: "AWS Region"
-              required: true
-              defult: "ap-southeast-2"
-            bucketName:
-              description: "S3 bucket Name"
-              default: "jason-cloudformation-test-01"
-              required: true
-            keypair: 
-              description: " random value"
-              required: false
+        workflow_dispatch:
+                inputs:
+                        region:
+                                description: "AWS Region"
+                                required: true
+                                defult: "ap-southeast-2"
+                         bucketName:
+                                 description: "S3 bucket Name"
+                                 default: "jason-cloudformation-test-01"
+                                 required: true
+                         keypair: 
+                                 description: " random value"
+                                 required: false
 jobs:
         cfn-deployment:
         runs-on: ubuntu-latest
@@ -25,16 +25,16 @@ jobs:
                  id : creds
                  uses: aws-actions/configure-aws-credentials@v1
                  with: 
-                   aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-                   aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-                   aws-region: ${{github.event.inputs.region}}
+                         aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+                         aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+                         aws-region: ${{github.event.inputs.region}}
 
                 -name: deploy s3 bucket cloudformation stacks
                  id: s3 bucket
                  uses: aws-actions/aws-cloudformation-github-deploy@v1.0.3
                  with: 
-                   name: s3-buckets
-                   template: jason/s3.yml
-                   parameter-overrides: >-
-                           BucketName= ${{github.event.inputs.bucketName}}
+                         name: s3-buckets
+                         template: jason/s3.yml
+                         parameter-overrides: >-
+                                 BucketName= ${{github.event.inputs.bucketName}}
                
