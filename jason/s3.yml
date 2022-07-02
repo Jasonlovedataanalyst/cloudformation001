@@ -11,5 +11,5 @@ Resources:
       BucketName: !Ref BucketName
       BucketEncryption:
         ServerSideEncryptionConfiguration:
-          - ServerSideEncryptionByDefault:Pa
+          - ServerSideEncryptionByDefault:
               SSEAlgorithm: AES256
