@@ -2,18 +2,18 @@ name: Deploy Cloudformation stacks
 
 on:
         workflow_dispatch:
-                 inputs:
-                        region:
-                                description: "AWS Region"
-                                required: true
-                                defult: "ap-southeast-2"
-                         bucketName:
-                                 description: "S3 bucket Name"
-                                 default: "jason-cloudformation-test-01"
-                                 required: true
-                         keypair: 
-                                 description: " random value"
-                                 required: false
+         inputs:
+                 region:
+                         description: "AWS Region"
+                         required: true
+                         defult: "ap-southeast-2"
+                 bucketName:
+                         description: "S3 bucket Name"
+                         default: "jason-cloudformation-test-01"
+                         required: true
+                 keypair: 
+                         description: " random value"
+                         required: false
 jobs:
         cfn-deployment:
         runs-on: ubuntu-latest
