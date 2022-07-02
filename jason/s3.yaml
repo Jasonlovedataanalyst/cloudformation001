@@ -1,15 +1,15 @@
-Parameters: 
+Parameters:
         BucketName:
                 Description: Name your jason bucket
                 Type: String
 
 Resources:
-        S3Bucket: 
+        S3Bucket:
                 Type: AWS::S3::Bucket
-                Properties: 
+                Properties:
                         AccessControl: Private
                         BucketName: !Ref BucketName
-                        BucketEncryption: 
+                        BucketEncryption:
                                         ServerSideEncryptionConfiguration:
                                                 - ServerSideEncryptionByDefault:Pa
-                                                SSEAlgorithm: AES256              
+                                        SSEAlgorithm: AES256
