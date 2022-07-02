@@ -2,7 +2,7 @@ name: Deploy Cloudformation stacks
 
 on:
         workflow_dispatch:
-                inputs:
+                 inputs:
                         region:
                                 description: "AWS Region"
                                 required: true
